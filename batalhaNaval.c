@@ -11,11 +11,15 @@ int main() {
     int tamanho_do_navio = 3;
     int navio_horizontal[3] = {3, 3, 3};
     int navio_vertical[3] = {3, 3, 3};
+    int navio_diagonal1[3] = {3, 3, 3};
+    int navio_diagonal2[3] = {3, 3, 3};
 
     // coordenadas iniciais
 
     int horizontal_linha = 2, horizontal_coluna = 1;
     int vertical_linha = 5, vertical_coluna = 6;
+    int diagonal1_linha = 0, diagonal1_coluna = 4;
+    int diagonal2_linha = 7, diagonal2_coluna = 2;
     
     printf ("Posicionando o Navio horizontal.\n");
 
@@ -30,6 +34,22 @@ int main() {
         tabuleiro[vertical_linha + i][vertical_coluna] = navio_vertical[i];
         printf("Parte %d em: [%d][%d]\n", i + 1, vertical_linha + i, vertical_coluna);
     }
+
+    printf ("Posicionando o primerio navio diagonal.\n");
+
+    for (int i = 0; i < tamanho_do_navio; i++) {
+        tabuleiro[diagonal1_linha + i][diagonal1_coluna + i] = navio_diagonal1[i];
+        printf("Parte %d em: [%d][%d]\n", i + 1, diagonal1_linha + i, diagonal1_coluna + i);
+    }
+
+    printf ("Posicionando o segundo navio diagonal.\n");
+
+    for (int i = 0; i < tamanho_do_navio; i++) {
+        tabuleiro[diagonal2_linha + i][diagonal2_coluna - i] = navio_diagonal2[i];
+        printf("Parte %d em: [%d][%d]\n", i + 1, diagonal2_linha + i, diagonal2_coluna - i);
+    }
+
+    // tabuleiro
 
     for ( int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
