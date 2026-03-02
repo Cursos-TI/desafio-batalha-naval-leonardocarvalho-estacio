@@ -20,15 +20,22 @@ int main() {
     printf ("Posicionando o Navio horizontal.\n");
 
     for (int i = 0; i < tamanho_do_navio; i++) {
-        tabuleiro[horizontal_linha][horizontal_coluna + 1] = navio_horizontal[i];
-        printf("Parte %d em: [%d][%d]\n", i + 1, horizontal_linha, horizontal_coluna + 1);
+        tabuleiro[horizontal_linha][horizontal_coluna + i] = navio_horizontal[i];
+        printf("Parte %d em: [%d][%d]\n", i + 1, horizontal_linha, horizontal_coluna + i);
     }
 
     printf ("Posicionando o Navio vertical.\n");
 
     for (int i = 0; i < tamanho_do_navio; i++) {
-        tabuleiro[vertical_linha + 1][vertical_coluna] = navio_vertical[i];
+        tabuleiro[vertical_linha + i][vertical_coluna] = navio_vertical[i];
         printf("Parte %d em: [%d][%d]\n", i + 1, vertical_linha + i, vertical_coluna);
+    }
+
+    for ( int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            printf ("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
     }
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
